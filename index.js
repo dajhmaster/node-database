@@ -7,11 +7,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.post('/createUser', (req, res) => {
-    store.createUser({
+    store
+        .createUser({
             username: req.body.username,
             password: req.body.password
         })
-        .then( () => res.sendStatus(200))
+        .then(() => res.sendStatus(200));
 });
 
 app.post('/login', (req, res) => {
